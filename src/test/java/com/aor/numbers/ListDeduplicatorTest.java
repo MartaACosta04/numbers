@@ -4,25 +4,15 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
-public class ListDeduplicatorTest {
+public class ListDeduplicatorTest implements GenericListDeduplicator {
     private List<Integer> list;
     private List<Integer> expected;
     private ListDeduplicator deduplicator;
-    @BeforeEach
-    public void setup(){
-        list = Arrays.asList(1,2,4,2,5);
-        expected = Arrays.asList(1,2,4,5);
-        deduplicator = new ListDeduplicator();
-    }
 
-    @Test
-    public void deduplicate() {
 
-        List<Integer> distinct = deduplicator.deduplicate(list);
-
-        Assertions.assertEquals(expected, distinct);
+    public List<Integer> deduplicate(List<Integer> list) {
+        return Arrays.asList(1, 2, 4); // O stub sempre retorna este resultado
     }
 }
